@@ -109,7 +109,9 @@ let myFavoriteNumber: string | number;
 赋值的时候，变量的形状必须和接口的形状保持一致  
 也就是说 实例变量内的属性数量和类型必须和接口一致 多了或者少了都不行
 
-- 可选属性
+- 可继承 即接口可继承接口
+
+* 可选属性
 
 ```JavaScript
 interface Person {
@@ -175,3 +177,28 @@ readonly id: number
   **值 as 类型**（在 tsx 语法（React 的 jsx 语法的 ts 版）中必须用这种。）
 - 类型断言不是类型转换，断言成一个联合类型中不存在的类型是不允许的
 - 例子见：https://ts.xcatliu.com/basics/type-assertion
+
+## 类型别名 **type**
+
+类型别名会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于**原始值，联合类型，元组以及其它任何你需要手写的类型**  
+起别名不会新建一个类型 - 它创建了一个新名字来引用那个类型。
+我个人觉得其实就是定义了一个不能 extends 的像 class 的变量？
+
+## 枚举
+
+所谓的枚举其实就是个等差数列？
+
+```JavaScript
+enum test={
+    up:1,
+    down,
+    left,
+    right
+}
+```
+
+好比上面的例子 test 里面的 up 是 1 后面的 down 和 left right 的值递增为 2 3 4  
+如果定义的时候 up 不赋值 up 取 0
+
+- 反向映射  
+  就是 value 可以通过 index 索引 index 也可以作为索引取到 value
